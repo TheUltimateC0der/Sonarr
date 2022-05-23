@@ -30,6 +30,7 @@ namespace NzbDrone.Http.Authentication
             {
                 var policy = new AuthorizationPolicyBuilder(_config.AuthenticationMethod.ToString())
                     .RequireAuthenticatedUser();
+
                 return Task.FromResult(policy.Build());
             }
 

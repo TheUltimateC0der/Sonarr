@@ -5,6 +5,7 @@ using System.Linq;
 using NLog;
 using NzbDrone.Common.EnsureThat;
 using NzbDrone.Common.Http.Proxy;
+using NzbDrone.Core.Authentication;
 using NzbDrone.Core.Configuration.Events;
 using NzbDrone.Core.MediaFiles;
 using NzbDrone.Core.MediaFiles.EpisodeImport;
@@ -345,6 +346,9 @@ namespace NzbDrone.Core.Configuration
 
         public CertificateValidationType CertificateValidation =>
             GetValueEnum("CertificateValidation", CertificateValidationType.Enabled);
+
+        public AuthenticationRequiredType AuthenticationRequired =>
+            GetValueEnum("AuthenticationRequired", AuthenticationRequiredType.Enabled);
 
         private string GetValue(string key)
         {
